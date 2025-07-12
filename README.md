@@ -172,23 +172,6 @@ AI_Learning/
 | `NEXTAUTH_SECRET` | NextAuth secret | Yes |
 | `FASTAPI_URL` | AI agent URL | Yes |
 
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **MongoDB Connection Error**
-   - Ensure MongoDB is running
-   - Check connection string format
-   - Verify network access for MongoDB Atlas
-
-2. **Port Already in Use**
-   - Change ports in environment variables
-   - Kill existing processes on ports 3000, 3001, 8000
-
-3. **API Key Errors**
-   - Verify API keys are correctly set
-   - Check API key permissions and quotas
-
 ## 📊 Database Schema
 
 ### Collections
@@ -224,7 +207,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📧 Support
 
-For support, email your-email@example.com or create an issue in the GitHub repository.
+For support, email parth.garg_cs.h23@gla.ac.in or create an issue in the GitHub repository.
 
 ```
 npm run dev
