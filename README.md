@@ -1,33 +1,230 @@
-# NextAdmin - Next.js Admin Dashboard Template and Components
+# AI Learning Management System
 
-**NextAdmin** is a Free, open-source Next.js admin dashboard toolkit featuring 200+ UI components and templates that come with pre-built elements, components, pages, high-quality design, integrations, and much more to help you create powerful admin dashboards with ease.
+A comprehensive AI-powered learning management system built with Next.js, React, and MongoDB. This platform provides curriculum generation, interactive chat, file management, and collaborative features for educational purposes.
 
+## 🚀 Features
 
-[![nextjs admin template](https://cdn.pimjo.com/nextadmin-2.png)](https://nextadmin.co/)
+- **AI-Powered Curriculum Generation**: Generate personalized learning tracks using LangChain and Groq AI
+- **Interactive Chat System**: Real-time chat with Socket.IO integration
+- **File Management**: Upload and manage educational materials
+- **User Authentication**: Secure authentication with NextAuth.js
+- **Responsive Dashboard**: Modern UI with Tailwind CSS
+- **Calendar Integration**: Schedule and track learning activities
+- **Task Management**: Kanban-style task organization
+- **Data Analytics**: Track learning progress and engagement
 
+## 🛠️ Tech Stack
 
-**NextAdmin** provides you with a diverse set of dashboard UI components, elements, examples and pages necessary for creating top-notch admin panels or dashboards with **powerful** features and integrations. Whether you are working on a complex web application or a basic website, **NextAdmin** has got you covered.
+### Frontend
+- **Next.js 15** - React framework with App Router
+- **React 18** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first CSS framework
+- **NextAuth.js** - Authentication
+- **Socket.IO Client** - Real-time communication
 
-### [✨ Visit Website](https://nextadmin.co/)
-### [🚀 Live Demo](https://demo.nextadmin.co/)
-### [📖 Docs](https://docs.nextadmin.co/)
+### Backend
+- **Node.js** - Runtime environment
+- **Express** - Web framework
+- **Socket.IO** - Real-time bidirectional communication
+- **MongoDB** - NoSQL database
+- **JWT** - Token-based authentication
 
-By leveraging the latest features of **Next.js 14** and key functionalities like **server-side rendering (SSR)**, **static site generation (SSG)**, and seamless **API route integration**, **NextAdmin** ensures optimal performance. With the added benefits of **React 18 advancements** and **TypeScript** reliability, **NextAdmin** is the ultimate choice to kickstart your **Next.js** project efficiently.
+### AI/ML
+- **Python 3.13** - AI agent runtime
+- **FastAPI** - Python web framework
+- **LangChain** - AI framework
+- **Groq API** - LLM integration
 
-## Installation
+## 📋 Prerequisites
 
-1. Download/fork/clone the repo and Once you're in the correct directory, it's time to install all the necessary dependencies. You can do this by typing the following command:
+- Node.js 18+ and npm
+- MongoDB (local or MongoDB Atlas)
+- Python 3.13+
+- Git
 
+## 🔧 Installation
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/YOUR_USERNAME/AI_Learning.git
+cd AI_Learning
 ```
+
+### 2. Install Frontend Dependencies
+```bash
 npm install
 ```
-If you're using **Yarn** as your package manager, the command will be:
+
+### 3. Install Backend Dependencies
+```bash
+cd backend
+npm install
+cd ..
+```
+
+### 4. Install Python Dependencies
+```bash
+pip install fastapi uvicorn langchain groq
+```
+
+### 5. Environment Setup
+
+Create environment files based on the examples:
+
+**Frontend (.env):**
+```bash
+cp .env.example .env
+```
+
+**Backend (backend/.env):**
+```bash
+cp backend/.env.example backend/.env
+```
+
+Fill in your actual values:
+- `MONGODB_URI`: Your MongoDB connection string
+- `GROQ_API_KEY`: Your Groq API key
+- `SERPER_API_KEY`: Your Serper API key
+- `JWT_SECRET`: A secure random string
+- `NEXTAUTH_SECRET`: A secure random string for NextAuth
+
+### 6. Run the Application
+
+**Start Frontend (Development):**
+```bash
+npm run dev
+```
+
+**Start Backend:**
+```bash
+cd backend
+node server.js
+```
+
+**Start AI Agent:**
+```bash
+python agent.py
+```
+
+## 🌐 Access Points
+
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:3001
+- **AI Agent**: http://localhost:8000
+
+## 📁 Project Structure
 
 ```
-yarn install
+AI_Learning/
+├── src/
+│   ├── app/                 # Next.js app router pages
+│   ├── components/          # React components
+│   ├── lib/                 # Utility libraries
+│   └── types/               # TypeScript type definitions
+├── backend/
+│   ├── server.js           # Express server
+│   └── package.json        # Backend dependencies
+├── public/
+│   ├── images/             # Static images
+│   └── uploads/            # User uploads
+├── agent.py                # Python AI agent
+└── package.json            # Frontend dependencies
 ```
 
-2. Okay, you're almost there. Now all you need to do is start the development server. If you're using **npm**, the command is:
+## 🔐 Security Features
+
+- Environment variables protection with `.gitignore`
+- JWT-based authentication
+- Input validation and sanitization
+- Secure file upload handling
+- CORS configuration
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 API Documentation
+
+### Authentication Endpoints
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/signin` - User login
+- `POST /api/auth/forgot-password` - Password reset
+
+### Data Endpoints
+- `GET /api/tables` - Get learning materials
+- `POST /api/tables` - Create new material
+- `GET /api/tracks` - Get learning tracks
+- `POST /api/upload` - File upload
+
+## 🛡️ Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `MONGODB_URI` | MongoDB connection string | Yes |
+| `GROQ_API_KEY` | Groq AI API key | Yes |
+| `SERPER_API_KEY` | Serper search API key | Yes |
+| `JWT_SECRET` | JWT signing secret | Yes |
+| `NEXTAUTH_SECRET` | NextAuth secret | Yes |
+| `FASTAPI_URL` | AI agent URL | Yes |
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **MongoDB Connection Error**
+   - Ensure MongoDB is running
+   - Check connection string format
+   - Verify network access for MongoDB Atlas
+
+2. **Port Already in Use**
+   - Change ports in environment variables
+   - Kill existing processes on ports 3000, 3001, 8000
+
+3. **API Key Errors**
+   - Verify API keys are correctly set
+   - Check API key permissions and quotas
+
+## 📊 Database Schema
+
+### Collections
+- `Users` - User accounts and profiles
+- `Notes` - Learning materials and notes
+- `Tracks` - AI-generated learning tracks
+- `ChatMessages` - Chat history
+- `Conversations` - Chat sessions
+
+## 🔄 Development Workflow
+
+1. **Feature Development**
+   - Create feature branch
+   - Implement changes
+   - Test locally
+   - Submit PR
+
+2. **Testing**
+   - Run frontend: `npm run dev`
+   - Run backend: `cd backend && node server.js`
+   - Test AI agent: `python agent.py`
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- Next.js team for the amazing framework
+- MongoDB for the flexible database
+- Groq for AI capabilities
+- All contributors to this project
+
+## 📧 Support
+
+For support, email your-email@example.com or create an issue in the GitHub repository.
 
 ```
 npm run dev
