@@ -47,8 +47,8 @@ A comprehensive AI-powered learning management system built with Next.js, React,
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/AI_Learning.git
-cd AI_Learning
+git clone https://github.com/Parthgarg27/AI-Powered-Interactive-Learning-Assistant.git
+cd AI-Powered-Interactive-Learning-Assistant
 ```
 
 ### 2. Install Frontend Dependencies
